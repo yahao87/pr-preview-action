@@ -220,6 +220,8 @@ the `with` parameter.
 
   Default: `pr-preview`
 
+- `pr-number`: 커스텀한 상황에서 PR번호를 주입하여 타겟 디렉토리를 맞추기 위함
+
 - `custom-url`: Base URL to use when providing a link to the preview site.
 
   Default: Will attempt to calculate the repository's GitHub Pages URL
