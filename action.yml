@@ -76,7 +76,7 @@ runs:
       env:
         action: ${{ inputs.action }}
         umbrella: ${{ inputs.umbrella-dir }}
-        pr: ${{ github.event.number }}
+        pr: ${{ inputs.pr-number || github.event.number }}
         actionref: ${{ github.action_ref }}
         actionrepo: ${{ github.action_repository }}
         customurl: ${{ inputs.custom-url }}
