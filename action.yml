@@ -63,6 +63,12 @@ inputs:
       all other events. `auto` is the default value.
     required: false
     default: auto
+  comment-header:
+    description: >
+      The header to use for the PR comment.
+      Default is `pr-preview`.
+    required: false
+    default: pr-preview
 
 outputs:
   deployment-url:
@@ -175,7 +181,7 @@ runs:
       if: env.action == 'remove' && env.deployment_status == 'success'
       uses: marocchino/sticky-pull-request-comment@331f8f5b4215f0445d3c07b4967662a32a2d3e31 # v2.9.0
       with:
-        header: pr-preview
+        header: ${{ inputs.comment-header }}
         number: ${{ inputs.pr-number }}
         message: "\
           [PR Preview Action]\
